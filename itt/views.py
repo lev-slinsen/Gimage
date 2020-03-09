@@ -1,8 +1,8 @@
+from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
 from .models import Image
 from .serializers import ImageSerializer
-from rest_framework import viewsets
 
 
 class ImageViewSet(viewsets.ModelViewSet):
@@ -11,4 +11,5 @@ class ImageViewSet(viewsets.ModelViewSet):
     """
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ('post',)
+    permission_classes = (AllowAny,)
