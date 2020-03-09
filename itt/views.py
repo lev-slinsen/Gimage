@@ -6,7 +6,9 @@ from rest_framework import viewsets
 
 
 class ImageViewSet(viewsets.ModelViewSet):
-    permission_classes = [AllowAny]
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
-    http_method_names = ['post']
+    http_method_names = ['get', 'post']
